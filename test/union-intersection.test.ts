@@ -48,11 +48,20 @@ test("union-intersection", () => {
 			console.log(cat_or_dog);
 		}
 	
-		_TestUnion({name: "cat", purrs: true});
-		_TestUnion({name: "dog", barks: true, wags: true});
-		_TestUnion({name: "mix", purrs: true, barks: true});
-		_TestUnion({name: "mix", purrs: true, wags: true});
-		_TestUnion({name: "mix", purrs: true, wags: true,  barks: true});
+		const cat: Cat = {name: "cat", purrs: true};
+		_TestUnion(cat);
+
+		const dog: Dog = {name: "dog", barks: true, wags: true};
+		_TestUnion(dog);
+
+		const mix: CatOrDogOrBoth = {name: "mix", purrs: true, barks: true};
+		_TestUnion(mix);
+
+		const mix1: CatOrDogOrBoth = {name: "mix", purrs: true, wags: true};	
+		_TestUnion(mix1);
+
+		const mix2: CatOrDogOrBoth = {name: "mix", purrs: true, wags: true,  barks: true};	
+		_TestUnion(mix2);
 		// Error: _TestUnion({name: "cat", barks: true});
 		// Error: _TestUnion({name: "cat"});
 		// Error: _TestUnion({purrs: true, wags: true,  barks: true});

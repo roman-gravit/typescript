@@ -138,7 +138,60 @@ test("classes", () => {
 		expect(user.toString()).toEqual("User name:Mike, age:32");
 	}
 
-	//TODO: Static
+	// Static properties
+	{
+		class User {
+
+			public name: string;
+
+			// belongs to class not to class instance
+			// its common for all instances
+			static secret = 12345;
+
+			constructor(name: string) {
+				this.name = name;
+			}
+
+			toString(): string {
+				return (`User name:${this.name}, secret:${User.secret}`);
+			}
+		}
+
+
+		const user = new User("Mike");
+		console.log(user);
+		console.log(user.toString());
+	}
+	
+	// abstract class
+	// base class form which other classes will be inherited
+	{
+		abstract class User {
+			constructor(public name: string, public age: number) {}
+
+			greet(): void {
+				console.log(this.name);
+			}
+
+			abstract GetPass(): string;
+		}
+
+		class Admin extends User {
+			pass: string;
+
+			constructor(age: number) {
+				super("Admin", age);
+				this.pass = "123456";
+			}
+
+			GetPass(): string {
+				return this.pass;
+			}
+		}
+
+		const max = new Admin(20);
+
+	}
 
 
 });
