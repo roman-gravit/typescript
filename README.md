@@ -46,3 +46,42 @@
 
    https://habr.com/ru/sandbox/211287/  [2024]
 
+
+###  Composing Types
+
+	```
+	type Cat = {
+		name: string, 
+		purrs: boolean
+	}
+    
+	type Dog = {
+		name: string, 
+		barks: boolean, 
+		wags: boolean
+	}
+
+	```
+
+  - Union:   represents a value that can have any of the types in the union
+    		 type CatOrDogOrBoth = Cat | Dog
+
+  - Intersection:   This means that data will only pass the type checker if it satisfies all the conditions of both types.
+    				type CatAndDog = Cat & Dog
+
+
+###   Type aliases
+
+type Name = string;    => we can use now:  let name: Name = "Mike";  
+
+```
+type Age = number;
+ 
+type userData = {
+    username: string, 
+    points: number,
+    age?: number
+};
+```
+
+As for let and const it is block scoped.
