@@ -78,8 +78,8 @@ test("enum", () => {
 
 	{	
 		// ****************************
-		//     4. const Enum  string
-		//   will be NOT transformed in map JS to: 
+		//  4. const Enum  string
+		//  will be NOT transformed in map JS to: 
 		//  Only if this enum will be invoked in code
 		const enum Links2 {
 			YouTube = "www.//yuotube.com",    
