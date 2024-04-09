@@ -13,6 +13,9 @@
 - TypeScript 5.0: 16 March 2023
 
 
+https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-3.html
+
+
 ### Basic types is TypeScript
 
    - any:     These may occur for values from code that has been written without TypeScript or a 3rd party library.
@@ -103,3 +106,46 @@ As for let and const it is block scoped.
 
 Generics are code templates that you can define and reuse throughout your codebase. 
 They provide a way to tell functions, classes, or interfaces what type you want to use when you call it.
+
+	```
+	function getter<T>(data: T): T {
+		console.log(data); 
+		return data;
+	}
+	
+	```
+
+### Utility Types
+
+Utility types in Typescript are some predefined generic types that can be used to manipulate or create other new types.
+
+- **Readonly<Type>** [TS 2.1] : Constructs a type with all properties of Type set to readonly, meaning the properties of the constructed type cannot be reassigned.
+
+- **Required<Type>** [TS 2.8] : Constructs a type consisting of all properties of Type set to required. The opposite of Partial.
+
+- **Partial<Type>** [TS 2.1] : Constructs a type with all properties of Type set to optional. This utility will return a type that represents all subsets of a given type.
+
+- **NonNullable<Type>** [TS 2.8] : Constructs a type by excluding null and undefined from Type.
+
+- **Record<Keys, Type>** [TS 2.1] :  Constructs an object type whose property keys are Keys and whose property values are Type. 
+                                     This utility can be used to map the properties of a type to another type.
+
+- **Pick<Type, Keys>** [TS 2.1] : Constructs a type by picking the set of properties Keys (string literal or union of string literals) from Type.
+
+- **Omit<Type, Keys>** [TS 3.5] : Constructs a type by picking all properties from Type and then removing Keys (string literal or union of string literals). 
+                                  The opposite of Pick.
+
+- **Exclude<UnionType, ExcludedMembers>** [TS 2.8] : Constructs a type by excluding from UnionType all union members that are assignable to ExcludedMembers
+
+- **Extract<Type, Union>** [TS 2.8] : Constructs a type by extracting from Type all union members that are assignable to Union.
+
+- **Parameters<Type>**  [TS 3.1]  : Constructs a tuple type from the types used in the parameters of a function type Type.
+                                     For overloaded functions, this will be the parameters of the last signature; see Inferring Within Conditional Types.
+
+- **ConstructorParameters<Type>**  [TS 3.1]  : Constructs a tuple or array type from the types of a constructor function type. 
+                                               It produces a tuple type with all the parameter types (or the type never if Type is not a function).
+
+- **ReturnType<Type>** [TS 2.8] : Constructs a type consisting of the return type of function Type.
+                                  For overloaded functions, this will be the return type of the last signature; see Inferring Within Conditional Types.
+              
+- **InstanceType<Type>** [TS 2.8] : Constructs a type consisting of the instance type of a constructor function in Type.
