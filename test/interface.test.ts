@@ -1,3 +1,6 @@
+// interfaces can be merged 
+// interfaces can be extended
+
 test("interface", () => {
 
 

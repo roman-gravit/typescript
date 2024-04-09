@@ -1,3 +1,31 @@
+test("any-unknown", () => {
+
+	function test_any(arg: any): void {
+		// it will be all compliled, but theer will be errors in run-time
+		console.log(arg + 5);
+		// here error: console.log(arg.charCodeAr(0));
+		console.log({...arg});
+	}	
+
+	test_any(10);
+
+	// need to use typecheck(type guards) before usong 
+	function test_unknown(arg: unknown): void {
+		if(typeof arg === "number") {
+			console.log(arg + 5);
+		}
+
+		if(typeof arg === "string") {
+			console.log(arg.charCodeAt(0));
+		}
+	}	
+
+	test_unknown(10);
+	test_unknown("10");
+
+});
+
+
 test("enum", () => {
 
 	{

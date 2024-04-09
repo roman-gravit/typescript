@@ -1,5 +1,17 @@
 ## Typescript
 
+### History
+
+- TypeScript 1.0: was released at Microsoft's Build developer conference in 2014
+
+- TypeScript 2.0: September 2016
+
+- TypeScript 3.0: 30 July 2018
+
+- TypeScript 4.0: 20 August 2020
+
+- TypeScript 5.0: 16 March 2023
+
 
 ### Basic types is TypeScript
 
@@ -85,3 +97,9 @@ type userData = {
 ```
 
 As for let and const it is block scoped.
+
+
+### Generics
+
+Generics are code templates that you can define and reuse throughout your codebase. 
+They provide a way to tell functions, classes, or interfaces what type you want to use when you call it.
