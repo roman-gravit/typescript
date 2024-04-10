@@ -149,3 +149,33 @@ Utility types in Typescript are some predefined generic types that can be used t
                                   For overloaded functions, this will be the return type of the last signature; see Inferring Within Conditional Types.
               
 - **InstanceType<Type>** [TS 2.8] : Constructs a type consisting of the instance type of a constructor function in Type.
+
+
+### Decorators
+
+Decorators provide a way to add both annotations and a meta-programming syntax for class declarations and members.
+
+To enable experimental support for decorators, you must enable the experimentalDecorators compiler option either on the command line or in your tsconfig.json.
+
+A Decorator is a special kind of declaration that can be attached to:
+
+ - class declaration
+ 
+ - method
+  
+ - accessor
+ 
+ - property
+ 
+ - parameter 
+
+Decorators use the form @expression, where expression must evaluate to a function that will be called at runtime with information about the decorated declaration.
+
+For example, given the decorator @sealed we might write the sealed function as follows:
+
+    ```
+    function sealed(target) {
+        // do something with 'target' ...
+    }
+
+    ```
