@@ -57,6 +57,6 @@ const a = [1,2,3,4,5];
 duplicate(a)
 console.log(a);
 
-function test2(a?: number, b?: number, c: number): void {
+function test2(a: number, b: number, c: number): void {
 	console.log(a, b, c);
 }

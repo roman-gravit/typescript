@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "build" : "tsc src/never.ts"
+  },
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "jest-cli": "^29.7.0",
