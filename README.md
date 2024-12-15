@@ -1,6 +1,6 @@
 ## Typescript
 
-### History
+###  History
 
 - TypeScript 1.0: was released at Microsoft's Build developer conference in 2014
 
@@ -16,7 +16,7 @@
 https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-3.html
 
 
-### Basic types is TypeScript
+###  Basic types is TypeScript
 
    - any:     These may occur for values from code that has been written without TypeScript or a 3rd party library.
               Unlike unknown, variables of type any allow you to access arbitrary properties, even ones that don’t exist. 
@@ -85,7 +85,7 @@ https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-3.html
     				type CatAndDog = Cat & Dog
 
 
-###   Type aliases
+###  Type aliases
 
 type Name = string;    => we can use now:  let name: Name = "Mike";  
 
@@ -102,7 +102,7 @@ type userData = {
 As for let and const it is block scoped.
 
 
-### Generics
+###  Generics
 
 Generics are code templates that you can define and reuse throughout your codebase. 
 They provide a way to tell functions, classes, or interfaces what type you want to use when you call it.
@@ -115,10 +115,11 @@ They provide a way to tell functions, classes, or interfaces what type you want 
 	
 	```
 
-### Utility Types
+###  Utility Types
 
 Utility types in Typescript are some predefined generic types that can be used to manipulate or create other new types.
 
+```
 - **Readonly<Type>** [TS 2.1] : Constructs a type with all properties of Type set to readonly, meaning the properties of the constructed type cannot be reassigned.
 
 - **Required<Type>** [TS 2.8] : Constructs a type consisting of all properties of Type set to required. The opposite of Partial.
@@ -150,8 +151,9 @@ Utility types in Typescript are some predefined generic types that can be used t
               
 - **InstanceType<Type>** [TS 2.8] : Constructs a type consisting of the instance type of a constructor function in Type.
 
+```
 
-### Decorators
+###  Decorators
 
 Decorators provide a way to add both annotations and a meta-programming syntax for class declarations and members.
 

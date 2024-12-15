@@ -44,3 +44,19 @@ function ThePowerOfNeverType(): void {
 	a1.doAction("BLOCKED");
 
 }
+
+function duplicate(arr: number[]): number[] {
+	const len = arr.length;
+	for(let i=0; i < len; i++) {
+		arr.push(arr[i]);
+	}
+	return arr;
+}
+
+const a = [1,2,3,4,5];
+duplicate(a)
+console.log(a);
+
+function test2(a?: number, b?: number, c: number): void {
+	console.log(a, b, c);
+}
