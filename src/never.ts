@@ -1,5 +1,24 @@
 if(true) {
-	
+
+	TEST(is("string", "other"), false);
+	TEST(is(true, false), false);
+	TEST(is(42, 42), true);
+	TEST(is(42, 42, 22), false);
+	TEST(is(42, 42, 42), true);
+
+	// @ts-expect-error
+	TEST(is(10, "foo"), false);
+
+	TEST(is([1], [1, 2], [1, 2, 3]), false);
+
+	function is<T>(param: T, ...rest: T[]): boolean {
+		return rest.every(elem => elem === param);
+
+	}
+
+	function TEST(result: boolean, tested: boolean) {
+		console.log(result === tested ? "+" : "Failed");
+	}
 }
 
 // call
