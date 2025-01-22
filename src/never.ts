@@ -1,4 +1,82 @@
+// Factory
 if(true) {
+
+	interface Shoe  { 
+		purpose: string; 
+	}
+
+	class BalletShoe implements Shoe {
+		purpose = "dancing";
+	}
+
+	class Boot implements Shoe {
+		purpose = "woodcutting";
+	}
+
+	class Sneaker implements Shoe {
+		purpose = "walking";
+	}
+
+	type ShoeCreator = {
+		create(type: 'ballet'): BalletShoe
+		create(type: 'boots'): Boot
+		create(type: 'sneaker'): Sneaker
+	}
+
+	const Shoe: ShoeCreator = {
+		create(type: "ballet" | "sneaker" | "boots"): Shoe {
+			switch (type) {
+				case "ballet": 
+					return new BalletShoe(); 
+				case "sneaker": 
+					return new Sneaker(); 
+				case "boots": 
+					return new Boot(); 
+				default: 
+					throw new Error("uknown type");
+					
+			}
+		}
+	}
+
+	const shoe1 = Shoe.create("ballet");
+	const shoe2 = Shoe.create("sneaker");
+	const shoe3 = Shoe.create("boots");
+
+}
+
+// Private - Protected constructor
+if(false) {
+	
+	class A_Private {
+		private constructor() {}
+	}
+	  
+	// @ts-expect-error
+	class B extends A_Private {} 
+
+	// @ts-expect-error
+	new A_Private() 
+
+	// @ts-expect-error
+	new B() 
+
+
+	class A_Protected {
+		protected constructor() {}
+	}
+	  
+	class B1 extends A_Protected {} 
+
+	// @ts-expect-error
+	new A_Protected() 
+
+	// @ts-expect-error
+	new B1() 
+
+}
+
+if(false) {
 
 	TEST(is("string", "other"), false);
 	TEST(is(true, false), false);
@@ -14,10 +92,6 @@ if(true) {
 	function is<T>(param: T, ...rest: T[]): boolean {
 		return rest.every(elem => elem === param);
 
-	}
-
-	function TEST(result: boolean, tested: boolean) {
-		console.log(result === tested ? "+" : "Failed");
 	}
 }
 
@@ -152,3 +226,6 @@ if(false) {
 	console.log("Filter2:", test1(itemsS, predicateS));
 }
 
+function TEST(result: boolean, tested: boolean) {
+	console.log(result === tested ? "+" : "Failed");
+}
